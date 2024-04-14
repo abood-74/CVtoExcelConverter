@@ -4,4 +4,4 @@ from .models import CV
 class CVUploadForm(forms.ModelForm):
     class Meta:
         model = CV
-        fields = ['name', 'file']
+        fields = ['file']
