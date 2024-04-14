@@ -55,6 +55,17 @@
 <body>
     <div class="container">
         <h1>Upload CV</h1>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {% if forloop.last %}
+                    <li>{{ message }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
         <form method="post" action="{% url 'cv_upload' %}" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
