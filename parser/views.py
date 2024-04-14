@@ -27,7 +27,7 @@ class CVUploadView(View):
             if file_name.endswith('.pdf'):
                 email, phone, text_content = extract_data_from_cv(cv.file)
             elif file_name.endswith('.doc'):
-                email, phone, text_content = extract_data_from_doc(cv.file)
+                return HttpResponse('DOC files are not supported. Please upload a DOCX file.')
             elif file_name.endswith('.docx'):
                 email, phone, text_content = extract_data_from_docx(cv.file)
             else:
